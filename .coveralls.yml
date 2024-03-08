@@ -1,10 +1,4 @@
-repo_token: uLDeUqH4GkLeZm3QoH33P6Os0W5ySuS6tOh2
+gcov: gcov
+exclude_pattern: "tests/.*" # Опционально, если вы хотите исключить определенные файлы или папки из отчета
 
-language: cpp
-service_name: travis-ci
-after_success:
-  - curl https://raw.githubusercontent.com/okkez/simple-coveralls/master/simple-coveralls.rb |
-      ruby
-- name: Coveralls GitHub Action
-uses: coverallsapp/github-action@v2.2.3
             

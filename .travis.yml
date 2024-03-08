@@ -1,16 +1,16 @@
 language: cpp
-os: linux
-dist: xenial
+compiler: gcc
 
 before_install:
-  - pip install --user cpp-coveralls
+  - gem install coveralls-lcov
 
 script:
   - mkdir build
   - cd build
   - cmake ..
   - make
-  - make test
+  - cd ..
 
 after_success:
-  - coveralls --root .. --build-root . --exclude tests --gcov-options '\--relative-only'
+  - coveralls-lcov --repo-token mo2RCaOKRqRqBT8utItWC973wjmy8gUy4 build/coverage.info
+
