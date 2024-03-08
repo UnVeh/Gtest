@@ -5,4 +5,6 @@ service_name: travis-ci
 after_success:
   - curl https://raw.githubusercontent.com/okkez/simple-coveralls/master/simple-coveralls.rb |
       ruby
-
+- name: Coveralls GitHub Action
+uses: coverallsapp/github-action@v2.2.3
+            
