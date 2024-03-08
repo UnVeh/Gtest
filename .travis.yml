@@ -12,5 +12,5 @@ script:
   - cd ..
 
 after_success:
-  - coveralls-lcov --repo-token mo2RCaOKRqRqBT8utItWC973wjmy8gUy4 build/coverage.info
+  - coveralls-lcov --repo-token 7nP4T5wrd5kiKQJZy5isFaTvUGoUUcNjO build/coverage.info
 
