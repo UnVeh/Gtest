@@ -1,0 +1,7 @@
+repo_token: UnVeh1235
+language: cpp
+service_name: travis-ci
+after_success:
+  - curl https://raw.githubusercontent.com/okkez/simple-coveralls/master/simple-coveralls.rb |
+      ruby
+
