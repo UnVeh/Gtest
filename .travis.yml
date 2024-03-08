@@ -1,0 +1,16 @@
+language: cpp
+os: linux
+dist: xenial
+
+before_install:
+  - pip install --user cpp-coveralls
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - make test
+
+after_success:
+  - coveralls --root .. --build-root . --exclude tests --gcov-options '\--relative-only'
