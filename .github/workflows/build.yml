@@ -1,24 +1,20 @@
 name: Build and Test
 
-on: [push]
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up CMake
-      uses: actions/setup-cmake@v1
-      with:
-        cmake-version: '3.16'
+    - name: Build
+      run: make build
 
-    - name: Build and Test
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-        make
-        make test
+    - name: Test
+      run: make test
